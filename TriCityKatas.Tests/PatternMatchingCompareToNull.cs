@@ -22,16 +22,16 @@ internal class PatternMatchingCompareToNull
         return result;
     }
 
-    public class MyClass
-    {
-        public static bool operator ==(MyClass a, MyClass b) => false;
-        public static bool operator !=(MyClass a, MyClass b) => false;
-    }
-
     [Test]
     public void CheckNullTests()
     {
         var result = CheckNull();
         Assert.That(result, Is.EqualTo(2));
+    }
+
+    public class MyClass
+    {
+        public static bool operator ==(MyClass a, MyClass b) => false;
+        public static bool operator !=(MyClass a, MyClass b) => false;
     }
 }
